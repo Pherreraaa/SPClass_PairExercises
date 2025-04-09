@@ -8,11 +8,11 @@ import time
 import os
 from concurrent.futures import ThreadPoolExecutor
 
-# Ensure output directory exists
+# Output directory
 output_dir = "wiki_refs"
 os.makedirs(output_dir, exist_ok=True)
 
-# Clean file name from title
+# Clean file
 def clean_filename(title):
     return "".join(c for c in title if c.isalnum() or c in (' ', '-', '_')).rstrip()
 
@@ -41,7 +41,7 @@ def sequential_download():
     end = time.perf_counter()
     print(f"Sequential download took {end - start:.2f} seconds.")
 
-# SECTION B: Concurrent download
+# SECTION B
 def wiki_dl_and_save(topic):
     try:
         page = wikipedia.page(topic, auto_suggest=False)
