@@ -16,7 +16,7 @@ os.makedirs(output_dir, exist_ok=True)
 def clean_filename(title):
     return "".join(c for c in title if c.isalnum() or c in (' ', '-', '_')).rstrip()
 
-# SECTION A: Sequential download
+# Section A 
 def sequential_download():
     start = time.perf_counter()
 
@@ -41,7 +41,7 @@ def sequential_download():
     end = time.perf_counter()
     print(f"Sequential download took {end - start:.2f} seconds.")
 
-# SECTION B
+# Section B
 def wiki_dl_and_save(topic):
     try:
         page = wikipedia.page(topic, auto_suggest=False)
